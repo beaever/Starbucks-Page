@@ -3,18 +3,20 @@ Starbucks Page Clone Coding
 
 # BEM (Block Element Modifier)
 1) 요소__일부분 Underscore(Lodash) 기호로 요소의 일부분을 표시
+```
 <div class="container">
   <div class="container__name"></div>
     <div class="item">
       <div class="item__name"></div>
     </div>
 </div>
-
+```
 2) 요소--상태 Hyphen(Dash) 기호로 요소의 상태를 표시
+```
 <div class="btn btn--primary"></div>
 <div class="btn btn--success"></div>
 <div class="btn btn--error"></div>
-
+```
 Class Name 만으로 HTML 구조를 확인하지 않아도 어느 구조에 있는지 확인 가능하는 효과
 
 # lodash
