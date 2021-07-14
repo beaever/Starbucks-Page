@@ -33,12 +33,17 @@ Class Name 만으로 HTML 구조를 확인하지 않아도 어느 구조에 있�
 다양한 유틸리티 기능을 제공하는 자바스크립트 라이브러리
 scroll 함수를 사용했을때 console.log(scrollY)를 선언하게되면 많은 값이 찍히게 된다.
 작은 프로젝트에서는 상관이 없겠지만, 큰 프로젝트 경우 브라우저가 무거워 질 수 도 있기 때문 이러한 문제를 보안하기 위해 사용 하는 라이브러리 이다.
-_.throttle(함수, 시간) /
+_.throttle(함수, 시간);
 https://cdnjs.com/libraries/lodash.js
 
 
 ## gsap 
 JavaScript animation library
 자바스크립트 애니메이션 라이브러리 이다.
-gsap.to(요소, 지속시간, 옵션); /
+gsap.to(요소, 지속시간, 옵션);
 https://cdnjs.com/libraries/gsap
+
+## Swiper
+JavaScript Swiper Library
+new Swiper(선택자, 옵션);
+https://swiperjs.com/get-started#use-swiper-from-cdn
