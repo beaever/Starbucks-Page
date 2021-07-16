@@ -22,18 +22,30 @@ searchInputEl.addEventListener('blur', () => {
 // _.throttle(함수, 시간), gsap.to(요소, 지속시간, 옵션); 
 const badgeEl = document.querySelector('header .badges');
 
-window.addEventListener('scroll', _.throttle( ()=> {
-  console.log(scrollY);
-  if (window.scrollY > 300) {
+window.addEventListener('scroll', _.throttle(function () {
+  // 페이지 스크롤 위치가 500px이 넘으면.
+  if (window.scrollY > 500) {
+    // Badge 요소 숨기기
     gsap.to(badgeEl, .6, {
       opacity: 0,
-      dispaly: 'none'
-    });
+      display: 'none'
+    })
+    // 상단으로 스크롤 버튼 보이기
+    gsap.to(toTopEl, .2, {
+      x: 0
+    })
+
+  // 페이지 스크롤 위치가 500px이 넘지 않으면.
   } else {
+    // Badge 요소 보이기
     gsap.to(badgeEl, .6, {
       opacity: 1,
-      dispaly: 'block'
-    });
+      display: 'block'
+    })
+    // 상단으로 스크롤 버튼 숨기기
+    gsap.to(toTopEl, .2, {
+      x: 100
+    })
   }
 }, 300));
 

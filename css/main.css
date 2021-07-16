@@ -32,7 +32,7 @@ a {
   font-weight: 700;
   text-align: center;
   cursor: pointer;
-  box-shadow: border-box;
+  box-sizing: border-box;
   display: block;
   transition: .4s;
 }
@@ -535,4 +535,96 @@ header .badges .badge {
 .notice .promotion .swiper-next:hover {
   background-color: #333;
   color: #fff;
+}
+
+/* REWARDS */
+.rewards {
+  position: relative;
+}
+
+.rewards .inner {
+  background: url('../images/rewards.jpg');
+  height: 241px;
+}
+
+.rewards .bg-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #272727;
+}
+
+.rewards .bg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #d5c798;
+}
+
+.rewards .btn-group {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 250px;
+  bottom: 24px;
+  right: 0;
+}
+
+.rewards .btn-group .btn.sign-up {
+  margin-right: 10px;
+}
+
+.rewards .btn-group .btn.sign-in {
+  width: 110px;
+}
+
+.rewards .btn-group .btn.gift {
+  flex-grow: 1;
+  margin-top: 10px;
+}
+
+/* YOUTUBE VIDEO */
+.youtube {
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+  background: #333;
+}
+
+.youtube .youtube__area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: calc(1920px * 9 / 16 / -2) 0 0 calc(1920px / -2);
+  width: 1920px;
+  background: orange;
+}
+
+.youtube .youtube__area::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /* 16:9 비율 */
+}
+
+.youtube .youtube__cover {
+  background: url('../images/video_cover_pattern.png') rgba(0,0,0,.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
