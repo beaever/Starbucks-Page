@@ -1,23 +1,4 @@
 'use strict';
-// FOCUS EVENT
-const searchEl = document.querySelector('.search');
- //searchEl 변수 안 .search 안에서 input 요소를 찾는다.
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', () => {
-  searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', () => {
-  searchEl.classList.add('focused');
-  searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', () => {
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder', '');
-});
-
 // SCROLL EVENT (lodash, gsap)
 // _.throttle(함수, 시간), gsap.to(요소, 지속시간, 옵션); 
 
@@ -32,25 +13,33 @@ window.addEventListener('scroll', _.throttle(function () {
     gsap.to(badgeEl, .6, {
       opacity: 0,
       display: 'none'
-    })
-    // 상단으로 스크롤 버튼 보이기
+    });
+    //스크롤 버튼 보이기
     gsap.to(toTopEl, .2, {
-      x: 0
-    })
+      x: 0,
+      opacity: 1
+    });
 
   // 페이지 스크롤 위치가 500px이 넘지 않으면.
-  } else {
+  }else {
     // Badge 요소 보이기
     gsap.to(badgeEl, .6, {
       opacity: 1,
       display: 'block'
-    })
-    // 상단으로 스크롤 버튼 숨기기
+    });
+    //스크롤 버튼 숨기기
     gsap.to(toTopEl, .2, {
-      x: 100
-    })
-  }
+      x: 100,
+      opacity: 0
+    });
+  };
 }, 300));
+
+toTopEl.addEventListener('click', () => {
+  gsap.to(window, .7, {
+    scrollTo: 0
+  })
+});
 
 
 
@@ -88,6 +77,21 @@ new Swiper('.promotion .swiper-container', {
     nextEl: '.promotion .swiper-next' // 다음 버튼 선택자
   }
 });
+
+new Swiper('.awards .swiper-container', {
+  // direction: 'horizontal'
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5, // 한번에 몇개의 슬라이드가 보여질 껀지
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
+  }
+});
+
+
+
 
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
@@ -133,4 +137,4 @@ spyEls.forEach(function (spyEl) {
     })
     .setClassToggle(spyEl, 'show') // 요소가 화면에 보이면 show 클래스 추가
     .addTo(new ScrollMagic.Controller()) // 컨트롤러에 장면을 할당(필수)
-})
+});
